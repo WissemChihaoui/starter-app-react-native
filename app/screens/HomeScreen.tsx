@@ -6,6 +6,8 @@ type RootStackParamList = {
   Home: undefined;
   Form: undefined;
   List: undefined;
+  Switcher: undefined;
+  Todo: undefined;
 };
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
@@ -17,6 +19,8 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.buttons}>
           <Button title="Go to Form" onPress={() => navigation.navigate('Form')} />
           <Button title="View List" onPress={() => navigation.navigate('List')} />
+          <Button title="View Switcher" onPress={() => navigation.navigate('Switcher')} />
+          <Button title="View Todo app" onPress={() => navigation.navigate('Todo')} />
       </View>
     </View>
   );
@@ -36,6 +40,7 @@ const styles = StyleSheet.create({
   buttons: {
     display: "flex",
     flexDirection:'row',
+    flexWrap:'wrap',
     gap:16,
   }
 });
